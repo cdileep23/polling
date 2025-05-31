@@ -30,7 +30,7 @@ const EachPoll = () => {
     const userData = JSON.parse(sessionStorage.getItem("user"));
     setUser(userData);
 
-    const newSocket = io("http://localhost:9000");
+    const newSocket = io(BASE_URL);
     setSocket(newSocket);
   newSocket.emit("join-room", id);
     newSocket.on("poll-timer", (time) => {
